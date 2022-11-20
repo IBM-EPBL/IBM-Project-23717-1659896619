@@ -1,34 +1,23 @@
-apiVersion: v1
-kind: Service
-metadata:
-  name: peta-application
-spec:
-  selector:
-    app: peta-application
-  ports:
-  - protocol: "TCP"
-    port: 8000
-    targetPort: 8000
-  type: LoadBalancer
-
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: peta-application
+
 spec:
+  replicas: 3
   selector:
     matchLabels:
       app: peta-application
-  replicas: 5
   template:
     metadata:
       labels:
         app: peta-application
+
     spec:
       containers:
-      - name: peta-application
-        image: peta-application
-        imagePullPolicy: IfNotPresent
-        ports:
-        - containerPort: 8000
+        - name: peta-application
+          image: peta-application
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8000
+              protocol: TCP
