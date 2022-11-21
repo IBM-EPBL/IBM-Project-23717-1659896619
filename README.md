@@ -8,4 +8,6 @@ Team Member : Dinesh Kumar N<br>
 
 
 
-Demo Link: https://www.youtube.com/watch?v=M-q1h0hZa2o
+Demo Video Link: https://www.youtube.com/watch?v=M-q1h0hZa2o
+
+Application Exposed link: http://169.51.195.190:30035/
